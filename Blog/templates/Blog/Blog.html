@@ -1,0 +1,86 @@
+{% extends 'Home/templates.html'%}
+{% load static %}
+
+{% block head %}
+    <title>Blog</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="tengah">
+        <div class="full-width">
+            <img id="kendala-pulsa" src="{% static 'images/kendala-sepulsa.jpg' %}">
+        </div>
+        <div class="deskripsi-pulsa">
+            <div>September 25, 2018</div>
+            <div>0 Comment</div>
+        </div>
+        <div class="full-width">
+            <h1>Punya Kendala? Segera Hubungi Customer Service!</h1>
+        </div>
+        <div class="full-width">
+            <p>
+                Bagi Sepulsa, kepuasan pelanggan adalah yang utama. Kami senantiasa mendengarkan keluhan maupun kendala yang kamu
+                hadapi selama melakukan transaksi di Sepulsa. Umumnya pelanggan Sepulsa menghadapi kendala sebagai berikut: Status
+                Order Pending Jika transaksi pembayaran sudah selesai, namun status order kamu masih pending dalam jangka waktu 15
+                menit, segera hubungi tim Customer Service dengan menyertakan email ...
+            </p>
+        </div>
+        <div>
+            <a href="#">Baca Selengkapnya</a>
+        </div>
+    </div>
+    <br>
+
+    <div class="tengah">
+        <div class="full-width">
+                <img id="sms" src="{% static 'images/sms.png' %}">
+            </div>
+            <div class="deskripsi-pulsa">
+                <div>August 14, 2018</div>
+                <div>0 Comment</div>
+            </div>
+            <div class="full-width">
+                <h1>OTP, Si Kode Rahasia nan Berbahaya</h1>
+            </div>
+            <div class="full-width">
+                <p>
+                    Kemudahan dalam berbagai transaksi perbankan memang banyak memberikan keuntungan bagi nasabah.
+                    Bayangkan saja, aktivitas jual beli yang pada awalnya membutuhkan waktu dan tempat, kini bisa
+                    dilakukan tanpa perlu beranjak dari tempat duduk kamu dan pembayaran lunas dalam hitungan detik
+                    dengan cara transaksi online. Namun tanpa disadari, kemudahan tersebut bukan berarti tanpa celah.
+                    Sebelum kita membahas lebih ...  
+                </p>
+            </div>
+            <div>
+                <a href="#">Baca Selengkapnya</a>
+            </div>
+        </div>   
+    </div>
+    
+    {% for postingan in blogs %}
+    <div class="tengah">
+        <div class="full-width">
+                <img id="sms" src="{{ postingan.Foto }}">
+            </div>
+            <div class="deskripsi-pulsa">
+                <div>{{ postingan.Posted_at }}</div>
+                <div>{{ postingan.Komentar }}</div>
+            </div>
+            <div class="full-width">
+                <h1>{{ postingan.Judul }}</h1>
+            </div>
+            <div class="full-width">
+                <p>
+                   {{postingan.Isi}} 
+                </p>
+            </div>
+            <div>
+                <a href="#">Baca Selengkapnya</a>
+            </div>
+        </div>   
+    </div>
+    {% endfor %}
+    <br>
+<br>
+{% endblock %}

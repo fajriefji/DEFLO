@@ -1,0 +1,33 @@
+{% extends 'Home/templates.html'%}
+{% load static %}
+
+{% block head %}
+    <title>Mentee</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="tengah-tengah">
+        <div class="row" id="id-mentee">
+            <div id="learn">
+                <h5>Our Mentee</h5>
+            </div>
+        </div>
+        
+        {% for data in mentees %}
+        <div class="mentee row" id="id-mentee">
+            <div class="col-md-4 col-12">
+                <img class="foto-mentee" src="{{ data.Foto }}">
+            </div>
+            <div class="col-md-8 col-12">
+                <h5>{{ data.Nama }}</h5>
+                <p>{{ data.Slogan }}</p>
+            </div>
+        </div>
+        {% endfor %}
+        <br>
+        <br>
+        <br>
+    </div>
+
+{% endblock %}

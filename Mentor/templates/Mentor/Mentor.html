@@ -1,0 +1,33 @@
+{% extends 'Home/templates.html'%}
+{% load static %}
+
+{% block head %}
+    <title>Mentor</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="tengah-tengah1">
+        <div class="row" id="id-mentor">
+            <div id="learn">
+                <h5>Our Mentor</h5>
+            </div>
+        </div>
+        
+    {% for post in mentors %}
+    <div class="mentor row" id="id-mentor">
+        <div class="col-md-4 col-12">
+            <img class="foto-mentor" src="{{ post.Foto }}">
+        </div>
+        <div class="col-md-8 col-12">
+            <h5 class="nama-mentor">{{ post.Nama }}</h5>
+            <h6 class="desc">{{ post.Pengalaman }}</h6>
+            <p>{{ post.Slogan }}</p>
+        </div>
+    </div>
+    {% endfor %}
+    <br>
+    <br>
+    <br>
+</div>
+{% endblock %}
